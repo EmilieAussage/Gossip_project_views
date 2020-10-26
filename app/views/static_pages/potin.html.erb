@@ -1,0 +1,4 @@
+<h1><%= Gossip.find(@gossip_page).title %></h1>
+<p>Auteur : <%= link_to "#{Gossip.find(@gossip_page).user.first_name}", salut_path(Gossip.find(@gossip_page).user)%></p>
+<p>Le contenu du gossip : <%= Gossip.find(@gossip_page).content %></p>
+<p>Créé le <%=Gossip.find(@gossip_page).created_at %></p>

@@ -1,0 +1,6 @@
+<h1> Cet utilisateur a pour ID : <br> <%= User.find(@actual_user).id %> </h1><br> 
+<h2> Il porte le doux prénom de : <br> <%= User.find(@actual_user).first_name %></h2><br> 
+<h2> Ainsi que le nom un peu moins doux de : <br> <%= User.find(@actual_user).last_name %></h2><br> 
+<h2> Voici sa description : <br> <%= User.find(@actual_user).description %></h2><br> 
+<h2> Et son Email :<br>  <%= User.find(@actual_user).email %></h2><br> 
+<h2> Même si c'est pas gentil de le dire il a : <br> <%= User.find(@actual_user).age %> ans </h2><br> 
