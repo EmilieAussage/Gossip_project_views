@@ -1,0 +1,28 @@
+
+<h1>Bienvenue sur la page qui va te permettre de créer un nouveau potin !</h1> 
+
+
+
+<%= form_tag gossips_path, method: "post" do %>
+
+  <%= label_tag 'Title' %>
+  <%= text_field_tag 'title', @title %>
+  <br /> <br />
+
+  <%= label_tag 'content', @content %>
+  <%= text_area_tag :content, params[:content] %>
+  <br /> <br />
+  <% if @gossip.errors.any? %>
+  <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+  <%= submit_tag "Sauvegarder un potin" %>
+  
+  <% end %>
+  
+  
+  

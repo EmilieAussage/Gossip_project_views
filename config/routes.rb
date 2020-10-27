@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :gossips, only: [:new, :create]
   get '/', to: 'static_pages#index', as: 'index'
   get '/contact', to: 'static_pages#contact'
   get '/team', to: 'static_pages#team'
