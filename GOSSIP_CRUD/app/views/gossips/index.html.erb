@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gossips</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>Auteur</th>  
+    <th>Title</th>
+      <th>Content</th>
+      <th>Ville</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gossips.each do |gossip| %>
+      <tr>
+      <td><%= link_to "#{Gossip.find(gossip.id).user.first_name}", user_path(Gossip.find(gossip.id).user)%></h5><td>
+        <td><%= gossip.title %></td>
+        <td><%= gossip.content %></td>
+        <td><a href="<%= gossip_path(gossip) %>" class="btn btn-primary">Voir</a></td>
+        <td><a href="<%= edit_gossip_path(gossip) %>" class="btn btn-primary">Modifier</a></td>
+        <td><a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger"  data-confirm="Etes-vous surs de vouloir supprimer le gossip ?" method="DELETE"> Supprimer </a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href="<%= new_gossip_path %>" class="btn btn-primary">Créer ton propre Potin</a>

@@ -1,0 +1,1 @@
+json.partial! "lier_private_message_users/lier_private_message_user", lier_private_message_user: @lier_private_message_user

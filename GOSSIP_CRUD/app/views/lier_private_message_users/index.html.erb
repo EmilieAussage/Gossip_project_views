@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lier Private Message Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lier_private_message_users.each do |lier_private_message_user| %>
+      <tr>
+        <td><%= link_to 'Show', lier_private_message_user %></td>
+        <td><%= link_to 'Edit', edit_lier_private_message_user_path(lier_private_message_user) %></td>
+        <td><%= link_to 'Destroy', lier_private_message_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lier Private Message User', new_lier_private_message_user_path %>
